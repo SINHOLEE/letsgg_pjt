@@ -1,0 +1,104 @@
+@import "../../mixins/mixin";
+
+// 모바일 버전 css를 먼저 만들고 아래에 데스크탑용 css를 별도로 만듦 ( @include desktop 사용 )
+// css는 위에서부터 적용하고 아래에 같은 범위의 css가 있을경우 덮어 씌우기 때문에
+// 데스크탑일 경우 아래에 있는 css가 적용된다.
+
+#lets-map-wrap {
+  position: relative;
+  top : 85px;
+  height : calc(100% - 85px);
+  width: 100%;
+  #lets-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .my-location-icon{
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      top: 20px;
+      left: 11px;
+      z-index: 1;
+      border: 1.5px solid black;
+      border-radius: 10px;
+      cursor: pointer;
+      background: url('../../assets/images/myLocationIconDefault.png');
+      background-size: cover;
+    }
+  .my-location-icon.activated{
+    background: url('../../assets/images/myLocationIconActivated.png');
+    background-size: cover;
+  }
+  .plus-icon{
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      top: 70px;
+      left: 11px;
+      z-index: 1;
+      border-radius: 10px;
+      cursor: pointer;
+      background: url('../../assets/images/plusIcon.png');
+  }
+  .minus-icon{
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      top: 110px;
+      left: 11px;
+      z-index: 1; 
+      border-radius: 10px;
+      cursor: pointer;
+      background: url('../../assets/images/minusIcon.png');
+  }
+}
+
+@include desktop{
+  #lets-map-wrap {
+    position: relative;
+    top : 0;
+    height : 100%;
+    width: 100%;
+    #lets-map {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .my-location-icon{
+      top : 50px;
+      left: 100vw;
+      transform: translateX( -49px );
+    }
+    .my-location-icon:active{
+      top : 50px;
+      left: 100vw;
+      transform: translateX( -49px ) scale(0.92);
+      transition: .2s;
+    }
+    .plus-icon{
+      top: 100px;
+      left: 100vw;
+      transform: translateX( -49px );
+    }
+    .plus-icon:active{
+      top: 100px;
+      left: 100vw;
+      transform: translateX( -49px ) scale(0.92);
+      transition: .2s;
+    }
+    .minus-icon{
+      top: 140px;
+      left: 100vw;
+      transform: translateX( -49px );
+    }
+    .minus-icon:active{
+      top: 140px;
+      left: 100vw;
+      transform: translateX( -49px ) scale(0.92);
+      transition: .2s;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "../../mixins/mixin";
+
+// 모바일 버전 css를 먼저 만들고 아래에 데스크탑용 css를 별도로 만듦 ( @include desktop 사용 )
+// css는 위에서부터 적용하고 아래에 같은 범위의 css가 있을경우 덮어 씌우기 때문에
+// 데스크탑일 경우 아래에 있는 css가 적용된다.
+.merchant-list{
+    width : 100%;
+    min-height: calc(var(--vh, 1vh) * 100 - 395px);
+    // height: calc($full-screen-height - 375px);
+    // overflow: scroll;
+    overflow-x: hidden;
+    transition: .5s;
+}
+
+.no-results{
+    width: 100%;
+    text-align : center;
+    // line-height: calc($full-screen-height - 375px);
+    line-height: 100px;
+    font-size: 20px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: .5s;
+}
+.clicked{
+    padding: 3px;
+    background-color: black;
+}
+.pagination-top{
+    position: relative;
+    height: 40px;
+    // width: 342px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.pagination{
+    position: relative;
+    height: 40px;
+    // width: 342px;
+    margin: 0 auto;
+}
+
+.sort-wrap{
+    position: relative;
+    width: 100vw;
+    height: 55px;
+    transition: .5s;
+    .sort-by-asc-desc{
+        float: right;
+    }
+    .sort-by{
+        float: right;
+    }
+}
+
+.merchant-list-loader{
+    position: relative;
+    width: 100px;
+    margin: 0 auto;
+}
+
+@include desktop{
+    .merchant-list{
+        width : 360px;
+        min-height: 0;
+        max-height: calc(100vh - 470px);
+        overflow: scroll;
+        overflow-x: hidden;
+        transition: .5s;
+    }
+    
+    .no-results{
+        width: 320px;
+        text-align : center;
+        line-height: 100px;
+        font-size: 20px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: .5s;
+    }
+    .clicked{
+        padding: 3px;
+        background-color: black;
+    }
+    .pagination-top{
+        display : none;
+    }
+    .pagination{
+        position: relative;
+        height: 40px;
+        width: 342px;
+        margin: 0 auto;
+    }
+    .sort-wrap{
+        position: relative;
+        width: 360px;
+    }
+}

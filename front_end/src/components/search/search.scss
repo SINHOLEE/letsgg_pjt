@@ -1,0 +1,54 @@
+@import "../../mixins/mixin";
+
+// 모바일 버전 css를 먼저 만들고 아래에 데스크탑용 css를 별도로 만듦 ( @include desktop 사용 )
+// css는 위에서부터 적용하고 아래에 같은 범위의 css가 있을경우 덮어 씌우기 때문에
+// 데스크탑일 경우 아래에 있는 css가 적용된다.
+#search-wrap{
+    position: relative;
+    // transform: translateX(-15vw);
+    transition: .5s;
+    width : calc(100vw - 110px);
+    height: 48px;
+    #search-input{
+        position: relative;
+        float: left;
+        width: calc(100vw - 200px);
+        background-color: white;
+        border-radius: 10px;
+        height : 48px;
+        // padding-left : 10px;
+        // padding-right : 10px;
+        transition: .5s;
+    }
+    .search-button{
+        position: relative;
+        // float : left;
+        width: 36px;
+        height: 36px;
+        background-color: black;
+        color : white;
+        border: 0;
+        border-radius: 10px;
+        transition: .5s;
+        cursor: pointer;
+    }
+}
+
+@include desktop{
+    #search-wrap{
+        position: relative;
+        // transform: translateX(-15vw);
+        transition: .5s;
+        width : 330px;
+        #search-input{
+            position: relative;
+            float: left;
+            width: 200px;
+            background-color: white;
+            border-radius: 10px;
+            height : 40px;
+            padding-left : 10px;
+            padding-right : 10px;
+        }
+    }
+}

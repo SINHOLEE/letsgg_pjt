@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.map.model.merchantmapper">
+
+	<select id="selectOne" resultType="merchant" parameterType="int">
+		select * from `makedb_merchant`
+		where id = #{id};
+	</select>
+	
+	<select id="select" resultType="merchant" parameterType="string">
+		select * from `makedb_merchant` 
+		<if test ="value!=null">
+			where id = #{id}
+		</if>
+	</select>
+	
+	<update id="update" parameterType="merchant">
+		update `makedb_merchant` set latitude=#{latitude}, longitude=#{longitude} where id=#{id} 
+	</update>
+</mapper>

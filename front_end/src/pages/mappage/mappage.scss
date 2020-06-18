@@ -1,0 +1,62 @@
+@import "../../mixins/mixin";
+
+// 모바일 버전 css를 먼저 만들고 아래에 데스크탑용 css를 별도로 만듦 ( @include desktop 사용 )
+// css는 위에서부터 적용하고 아래에 같은 범위의 css가 있을경우 덮어 씌우기 때문에
+// 데스크탑일 경우 아래에 있는 css가 적용된다.
+.map-page{
+    position : relative;
+    .search-list{
+        position: relative;
+        background-color: white;
+        float: left;
+        overflow: hidden;
+        box-shadow: 1px 1px 10px;
+        transition: .5s;
+        z-index: 2;
+    }
+    .map-area{
+        position: absolute;
+        top : 0px;
+        left : 0px;
+        width: 100vw;
+        // height: $full-screen-height;
+        height: $full-screen-height;
+        z-index: 0;
+    }
+    .store-info{
+        position: absolute;
+        top: $full-screen-height;
+        transform: translateY(-105px);
+        height: 50px;
+        // width: 50px;
+        z-index: 1;
+    }
+}
+
+@include desktop{
+    .map-page{
+        position : relative;
+        .search-list{
+            position: relative;
+            background-color: white;
+            float: left;
+            overflow: hidden;
+            left: 15px;
+            top: 12px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px;
+            transition: .5s;
+        }
+        .map-area{
+            position: absolute;
+            top : 0px;
+            left : 0px;
+            width: 100vw;
+            height: $full-screen-height;
+            z-index: 0;
+        }
+        .store-info{
+            display: none;
+        }
+    }
+}

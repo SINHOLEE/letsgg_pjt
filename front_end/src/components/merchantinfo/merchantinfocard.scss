@@ -1,0 +1,204 @@
+@import "../../mixins/mixin";
+
+// 모바일 버전 css를 먼저 만들고 아래에 데스크탑용 css를 별도로 만듦 ( @include desktop 사용 )
+// css는 위에서부터 적용하고 아래에 같은 범위의 css가 있을경우 덮어 씌우기 때문에
+// 데스크탑일 경우 아래에 있는 css가 적용된다.
+.swipe-view-wrap{
+    position: relative;
+    width: 100vw;
+}
+.store-info-card-wrap{
+    position: relative;
+    width: 95vw;
+    height: 80px;
+    left: 2.5vw;
+    .background{
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        background-color: white;
+        opacity: 0.9;
+        box-shadow: 1px 1px 10px;
+    }
+    .content{
+        position: relative;
+        .avatar{
+            float: left;
+            width: 60px;
+            height: 60px;
+            margin: 0 20px 0 10px;
+            top: 10px;
+            .avatar-background{
+                background-image: url('../../assets/images/siLogo.png');
+                width: inherit;
+                height: inherit;
+            }.image1 {
+                background-position: -80px -400px; // 가평 1
+            }
+            .image2 {
+                background-position: -146px -226px; // 여주시 2 
+            }
+            .image4 {
+                background-position: -6px -20px; // 고양 4
+            }
+            .image10 {
+                background-position: -80px -20px; // 과천 10 
+            }
+            .image11 {
+                background-position: -146px -186px; // 안성 11
+            }
+            .image12 {
+                background-position: -150px -20px; // 광명 12
+            }
+            .image13 {
+                background-position: -6px -65px; // 광주 13
+            }
+            .image16 {
+                background-position: -77px -146px; // 성남 16
+            }
+            .image20 {
+                background-position: -6px -230px; // 안양 20
+            }
+            .image22 {
+                background-position: -6px -314px; // 의정부 22
+            }
+            .image24 {
+                background-position: -143px -272px; // 의왕 24
+            }
+            .image25 {
+                background-position: -8px -190px; // 시흥 25
+            }
+            .image26 {
+                background-position: -80px -65px; // 구리 26
+            }
+            .image28 {
+                background-position: -150px -65px; // 군포 28
+            }
+            .image29 {
+                background-position: -75px -230px; // 양주 29
+            }
+            .image30 {
+                background-position: -80px -110px; // 남양주 30
+            }
+            .image31 {
+                background-position: -146px -400px;  // 양평 31
+            }
+            .image32 {
+                background-position: -146px -108px; // 동두천 32
+            }
+            .image33 {
+                background-position: -6px -150px; // 부천 33
+            }
+            .image37 {
+                background-position: -6px -355px; // 평택 37
+            }
+            .image38 {
+                background-position: -80px -314px; // 이천 38
+            }
+            .image42 {
+                background-position: -148px -150px; // 수원 42
+            }
+            .image43 {
+                background-position: -6px -440px; // 연천 43
+            }
+            .image45 {
+                background-position: -6px -272px; // 오산 45
+            }
+            .image46 {
+                background-position: -76px -188px; // 안산 46
+            }
+            .image47 {
+                background-position: -80px -272px; // 용인 47
+            }
+            .image49 {
+                background-position: -80px -358px; // 포천 49
+            }
+            .image50 {
+                background-position: -146px -355px; // 하남 50
+            }
+            .image56 {
+                background-position: -6px -400px; //화성 56
+            }
+            .image58 {
+                background-position: -150px -317px; // 파주 58
+            }
+        }
+        .name{
+            position: relative;
+            font-size: 22px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            padding-top: 8px;
+            margin-right: 10px;
+            max-width: calc(90vw - 90px);
+            float: left;
+            z-index: 1;
+            cursor: pointer;
+        }
+        .name-distance{
+            max-width: calc(90vw - 150px);
+        }
+        .distance{
+            position: relative;
+            height: 16px;
+            padding-top: 12px;
+            padding-bottom: 5px;
+            color : #555555;
+        }
+        .category{
+            position: relative;
+            float: left;
+            margin-right: 10px;
+            margin-top : 3px;
+            color : #555555;
+        }
+        .phone{
+            position: relative;
+        }
+        .kakao-map-icon{
+            position: relative;
+            margin-right: 10px;
+            float: right;
+            background : url('../../assets/images/kakaoMapIcon.png');
+            height: 22px;
+            width: 22px;
+            top : -2px;
+            border-radius: 5px;
+            background-size: cover;
+            cursor: pointer;
+        }
+        .address-copy-success{
+            position: absolute;
+            background-color: black;
+            left: 50vw;
+            color: white;
+            border-radius: 4px;
+            font-size: 19px;
+            padding: 1px 1px;
+            transform: translate(-50%, -100%);
+            opacity: 1;
+            transition: .5s;
+        }
+        .address-copy-success.hidden{
+            position: absolute;
+            opacity: 0;
+            transform: translate(-50%, 0);
+            transition: .5s;
+        }
+        .address{
+            position: relative;
+            // float: left;
+            color : #333333;
+            margin-top: 3px;
+            cursor: pointer;
+            .address-click-info{
+                background-color: black;
+                color: white;
+                border-radius: 4px;
+                font-size: 14px;
+                padding: 2px 2px;
+            }
+        }
+    }
+}

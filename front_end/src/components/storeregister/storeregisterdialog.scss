@@ -1,0 +1,55 @@
+.merchant-register-wrap{
+    font-size: 20px;
+    input{
+        height: 23px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        border-width: 1px;
+    }
+    margin-top: 30px;
+    margin-left: 10px;
+    #category{
+        margin:0;
+    }
+    .input-phone{
+        width: 40px;
+        margin-right: 10px;
+    }
+    .input-juso{
+        width: 300px;
+    }
+    .juso-search{
+        position: relative;
+        .search-button{
+            position: relative;
+            // float : left;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color : white;
+            border: 0;
+            top: 5px;
+            border-radius: 7px;
+            transition: .5s;
+            cursor: pointer;
+        }
+        .juso-search-list{
+            position: relative;
+            .juso-item{
+                font-size: 20px;
+                line-height: 28px;
+                cursor: pointer;
+                border-bottom: 1px solid #aaa;
+            }
+            margin-bottom: 5px;
+        }
+    }
+    .juso-search.hidden{
+        display: none;
+    }
+    .juso-detail{
+        position: relative;
+    }
+
+}

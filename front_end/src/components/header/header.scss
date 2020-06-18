@@ -1,0 +1,65 @@
+@import "../../mixins/mixin";
+
+// 모바일 버전 css를 먼저 만들고 아래에 데스크탑용 css를 별도로 만듦 ( @include desktop 사용 )
+// css는 위에서부터 적용하고 아래에 같은 범위의 css가 있을경우 덮어 씌우기 때문에
+// 데스크탑일 경우 아래에 있는 css가 적용된다.
+.header-wrap{
+    position : relative;
+    margin: 0 auto;
+    height: 30px;
+    transition: .5s;
+    .header-title{
+        position : relative;
+        float: left;
+        font-size : 50px;
+        width: 80px;
+        // cursor: pointer;
+        color: black;
+        font-weight: 600;
+    }
+    .header-sub-title{
+        display: none;
+        opacity: 1;
+        transition: opacity .5s;
+    }
+    .header-sub-title.hidden{
+        opacity: 0;
+        transition: opacity .5s;
+    }
+    .header-title{
+        font-size : 20px;
+        transition: .5s;
+    }
+}
+
+@include desktop{
+    .header-wrap{
+        position : relative;
+        padding-top : 0px;
+        height : 70px;
+        left: 0;
+        width: 360px;
+        margin: 0 auto;
+        transition: .5s;
+        text-align: center;
+        .header-title{
+            position : relative;
+            float: none;
+            font-size : 50px;
+            width: 200px;
+            margin: 0 auto;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .header-sub-title{
+            display: block;
+            position : relative;
+            font-size : 13.8px;
+            padding-top: 3px;
+        }
+        .header-title{
+            font-size : 50px;
+            transition: .5s;
+        }
+    }
+}

@@ -1,0 +1,142 @@
+@import "../../mixins/mixin";
+
+// 모바일 버전 css를 먼저 만들고 아래에 데스크탑용 css를 별도로 만듦 ( @include desktop 사용 )
+// css는 위에서부터 적용하고 아래에 같은 범위의 css가 있을경우 덮어 씌우기 때문에
+// 데스크탑일 경우 아래에 있는 css가 적용된다.
+.search-list-wrap{
+    position: relative;
+    width : 100vw;
+    transition: .5s;
+    z-index: 10;
+    .search-list-drawer{
+        position: relative;
+        z-index: 4;
+        float: left;
+    }
+    .search-list-header-wrap{
+        position: relative;
+        width: 100vw;
+        height: 50px;
+        margin-bottom: 10px;
+        .header{
+            position: relative;
+            // width: 330px;
+            // text-align: center;
+            height: inherit;
+            margin: 10px 10px 0 5px;
+            width: 80px;
+            float: left;
+            background-color: white;
+        }
+        .search-list-search{
+            position: relative;
+            width : calc(100vw - 150px);
+            height: 40px;
+            padding-top: 4px;
+            float: left;
+            // transition: .5s;
+            // margin: 0 auto;
+        }
+    }
+    .search-list-show-category-button{
+        width: 100vw;
+        margin: 0 auto;
+        text-align: center;
+        height : 25px;
+        line-height: 25px;
+        background-color: white;
+        border-radius: 10px;
+        color: black;
+        transition: .5s;
+        cursor: pointer;
+    }
+    .search-list-category{
+        position: relative;
+        display: block;
+        height: 160px;
+        margin: 0 auto;
+        transition: .5s;
+    }
+    .search-list-category.hidden{
+        height : 0;
+        overflow: hidden;
+        transition: .5s;
+    }
+    .search-list-store-card-list{
+        position: relative;
+        max-height: 2240px;
+        width: 100%;
+        margin: 0 auto;
+        transition: .5s;
+    }
+    .search-list-store-card-list.hidden{
+        max-height: 0;
+        overflow: hidden
+        transition height .5s;
+        >*{
+            display: none;
+        }
+    }
+}
+
+@include desktop{
+    .search-list-wrap{
+        position: relative;
+        width : 360px;
+        transition: .5s;
+        .search-list-drawer{
+            position: relative;
+            z-index: 3;
+            float: none;
+        }
+        .search-list-header-wrap{
+            position: relative;
+            width: 360px;
+            height: 120px;
+            .header{
+                position: relative;
+                height: 80px;
+                background-color: white;
+                margin: 0 auto;
+                width: 360px;
+                float: none;
+            }
+            .search-list-search{
+                position: relative;
+                padding-top: 0px;
+                float: none;
+                width : 284px;
+                height : 48px;
+                margin: 0 auto;
+            }
+        }
+        .search-list-category{
+            position: relative;
+            width: 330px;
+            margin: 0 auto;
+            height: 170px;
+            transition: .5s;
+        }
+        .search-list-category.hidden{
+            height: 170px;
+            transition: .5s;
+        }
+        .search-list-show-category-button{
+            display: none;
+        }
+        .search-list-store-card-list{
+            position: relative;
+            width: 360px;
+            margin: 0 auto;
+        }
+        .search-list-store-card-list.hidden{
+            max-height: calc(100vh - 100px);
+            >*{
+                display: block;
+            }
+            >.pagination-top{
+                display: none;
+            }
+        }
+    }
+}
