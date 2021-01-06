@@ -18,7 +18,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-swipeable-views": "^0.13.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "clipboard": "^2.0.6",
     "cross-env": "^7.0.2",
     "mobx": "^5.15.4",
